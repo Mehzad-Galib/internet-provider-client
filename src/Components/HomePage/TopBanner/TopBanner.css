@@ -1,0 +1,10 @@
+#topBanner {
+    background-image: url(../../../Images/HeaderBG.jpg);
+    background-repeat: no-repeat;
+    background-position:absolute;
+    
+    background-size: cover;
+    
+    background-position: center;
+    /* background-origin: center; */
+}
