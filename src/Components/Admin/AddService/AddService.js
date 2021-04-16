@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import { Button, Col, Form, Row } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import AdminSidebar from "../AdminSidebar/AdminSidebar";
+import Sidebar from "../../DashBoard/Sidebar/Sidebar";
 
 
 const AddService = () => {
@@ -40,7 +40,7 @@ const AddService = () => {
     <div className="d-flex mt-5">
       <div className="col-md-3">
         
-      <AdminSidebar></AdminSidebar>     
+    <Sidebar></Sidebar>     
         
       </div>
 

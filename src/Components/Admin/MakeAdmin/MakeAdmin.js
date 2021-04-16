@@ -2,28 +2,33 @@ import AdminSidebar from "../AdminSidebar/AdminSidebar";
 import React, { useState } from "react";
 import { Button, Col, Form, Row } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import Sidebar from "../../DashBoard/Sidebar/Sidebar";
 
 const MakeAdmin = () => {
-  const { register, errors, handleSubmit } = useForm();
-  const [admin, setAdmin] = useState({});
+  const { register, handleSubmit } = useForm();
+  const [confirm, setConfirm] = useState(null);
   const onSubmit = (data) => {
-    setAdmin(data);
-    fetch("http://localhost:8080/addAnAdmin", {
+    
+    fetch("http://localhost:8080/makeAdmin", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
     })
-    .then((res) => res.json());
+    .then((res) => res.json())
+    .then(result => {
+      setConfirm(data.email)
+    })
+    
   };
 
   return (
     <div className="d-flex mt-5">
       <div className="col-md-3">
-        <AdminSidebar></AdminSidebar>
+        <Sidebar></Sidebar>
       </div>
       <div className="col-md-9">
         <form onSubmit={handleSubmit(onSubmit)}>
-          <label>Email</label>
+          <label>Add an Email</label>
           <input
             type="text"
             {...register("email", {
@@ -40,6 +45,9 @@ const MakeAdmin = () => {
             </Button>
           </Col>
         </Form.Group>
+            {
+              confirm && <h4>{confirm} successfully added as an admin</h4>
+            }
       </div>
     </div>
   );

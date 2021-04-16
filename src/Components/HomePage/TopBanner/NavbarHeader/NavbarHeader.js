@@ -2,7 +2,9 @@ import { Link } from "react-router-dom";
 import React from "react";
 import { Button, Nav, Navbar } from "react-bootstrap";
 
+
 const NavbarHeader = () => {
+  
   return (
     <>
       <nav bg="dark" variant="dark" className="navbar navbar-expand-lg navbar-light navbar-dark bg-dark">
@@ -35,26 +37,19 @@ const NavbarHeader = () => {
                  <Nav.Link as={Link} to={`/dashboard/review`}>DashBoard</Nav.Link>
                 
               </li>
-              <li className="nav-item nav-link active">
-                
+
+              {/* <li className="nav-item nav-link active">
                  <Nav.Link as={Link} to={`/admin/addService`}>Admin Panel</Nav.Link>
-                
-              </li>
+              </li> */}
+
               <li className="nav-item nav-link active">
                 
                  <Nav.Link as={Link} to={`/home/`}>About Us</Nav.Link>
                 
               </li>
-
               <li className="nav-item nav-link active">
-                
                  <Button as={Link} to={`/login/`} variant="outline-info">Login</Button>
-                
               </li>
-              
-              
-              
-              
             </ul>
           </div>
         </div>

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Table } from 'react-bootstrap';
+import Sidebar from '../../DashBoard/Sidebar/Sidebar';
 import AdminSidebar from '../AdminSidebar/AdminSidebar';
 
 const DeleteService = () => {
@@ -24,7 +25,7 @@ const DeleteService = () => {
         <div className="d-flex mt-5">
             <div className="col-md-3">
         
-        <AdminSidebar></AdminSidebar>     
+        <Sidebar></Sidebar>     
           
         </div>
         <div className="col-md-9">

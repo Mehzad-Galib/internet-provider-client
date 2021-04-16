@@ -12,6 +12,7 @@ import MakeAdmin from './Components/Admin/MakeAdmin/MakeAdmin';
 import DeleteService from './Components/Admin/DeleteService/DeleteService';
 import AddReview from './Components/DashBoard/AddReview/AddReview';
 import CheckOut from './Components/DashBoard/CheckOut/CheckOut';
+import CustomerOrders from './Components/DashBoard/CustomerOrders/CustomerOrders';
 
 export const UserContext = createContext();
 
@@ -36,7 +37,7 @@ function App() {
           </Route>
 
           <PrivateRoute path="/dashboard/bookingList">
-            <DashBoard></DashBoard>
+            <CustomerOrders></CustomerOrders>
           </PrivateRoute>
           <PrivateRoute path="/dashboard/review">
             <AddReview></AddReview>
