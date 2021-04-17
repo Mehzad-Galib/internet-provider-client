@@ -31,14 +31,9 @@ const CheckOut = () => {
   }, [card, id]);
 
   const { serviceName, price, platform } = product;
- 
-  
-
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
-  
-
   const handleOrder = () => {
-    const allInfo = { ...loggedInUser, orderDate: new Date().toDateString("dd/mm/yyyy"), ...product };
+    const allInfo = { ...loggedInUser, orderDate: new Date().toDateString("dd/mm/yyyy"), ...product, orderStatus: 'pending' };
     console.log(allInfo);
 
     fetch("http://localhost:8080/orderInfo", {

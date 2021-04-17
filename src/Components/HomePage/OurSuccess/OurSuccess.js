@@ -28,7 +28,7 @@ const OurSuccess = () => {
         <Card>
             <Card.Img style={{height: '250px'}} variant="top" src={award3} />
             <Card.Body>
-              <Card.Title>Best Bandwidth</Card.Title>
+              <Card.Title>Best Bandwidth in the country in 2015</Card.Title>
               <Card.Text>
                 
               </Card.Text>
@@ -40,7 +40,7 @@ const OurSuccess = () => {
      <Card>
             <Card.Img style={{height: '250px'}} variant="top" src={award2} />
             <Card.Body>
-              <Card.Title>Best Speed</Card.Title>
+              <Card.Title>Best Speed in Rajshahi 2018</Card.Title>
               <Card.Text>
                 
               </Card.Text>

@@ -11,7 +11,7 @@ const Service = (props) => {
   return (
     <div className="col-md-4 col-sm-12 mb-4">
       <div className="card h-100 border-0 shadow-lg rounded-3 cardStyle">
-        <img style={{height: '300px'}} src={imgUrl} alt="..." />
+        <img style={{height: '350px'}} src={imgUrl} alt="..." />
         <div className="card-body">
           <h4>{serviceName}</h4>
           <h5>{platform}</h5>

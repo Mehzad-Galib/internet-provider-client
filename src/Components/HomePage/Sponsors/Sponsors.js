@@ -15,7 +15,7 @@ const Sponsors = () => {
           <Card>
             <Card.Img style={{height: '200px'}} variant="top" src={sponsor1} />
             <Card.Body>
-              <Card.Title>Best Speed</Card.Title>
+              <Card.Title>Lenovo Legion 5</Card.Title>
               <Card.Text></Card.Text>
             </Card.Body>
           </Card>
@@ -24,7 +24,7 @@ const Sponsors = () => {
           <Card>
             <Card.Img style={{height: '200px'}} variant="top" src={sponsor2} />
             <Card.Body>
-              <Card.Title>Best Speed</Card.Title>
+              <Card.Title>IPhone 12</Card.Title>
               <Card.Text></Card.Text>
             </Card.Body>
           </Card>
@@ -33,7 +33,7 @@ const Sponsors = () => {
           <Card>
             <Card.Img style={{height: '200px'}} variant="top" src={sponsor3} />
             <Card.Body>
-              <Card.Title>Best Speed</Card.Title>
+              <Card.Title>Drone </Card.Title>
               <Card.Text></Card.Text>
             </Card.Body>
           </Card>
@@ -42,7 +42,7 @@ const Sponsors = () => {
           <Card>
             <Card.Img style={{height: '200px'}} variant="top" src={sponsor4} />
             <Card.Body>
-              <Card.Title>Best Speed</Card.Title>
+              <Card.Title>Programming Hero</Card.Title>
               <Card.Text></Card.Text>
             </Card.Body>
           </Card>

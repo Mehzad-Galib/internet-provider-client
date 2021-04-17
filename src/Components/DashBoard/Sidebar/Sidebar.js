@@ -8,6 +8,7 @@ import { faFirstOrder, faServicestack } from "@fortawesome/free-brands-svg-icons
 
 const Sidebar = () => {
   const [isAdmin, setIsAdmin] = useState(false);
+  const [isUser, setIsUser] = useState(true);
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
   useEffect(() => {
@@ -16,7 +17,10 @@ const Sidebar = () => {
       .then((data) => {
         if (data.length) {
           setIsAdmin(true);
+          setIsUser(false);
+          
         }
+        
 
         // console.log(data);
       })
@@ -29,7 +33,10 @@ const Sidebar = () => {
       style={{ height: "100vh" }}
     >
       <ul className="list-unstyled">
-        <li>
+        
+       
+       {isUser && (<div>
+       <li>
           <Link to={`/dashboard/bookingList`} className="text-white nav-link active">
           <FontAwesomeIcon icon={faCartPlus} /> <span>Booking List</span>
           </Link>
@@ -39,6 +46,8 @@ const Sidebar = () => {
           <FontAwesomeIcon icon={faReceipt} /> <span>Add Review</span>
           </Link>
         </li>
+       </div>)}
+       
 
         {isAdmin && (
           <div>

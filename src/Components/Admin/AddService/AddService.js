@@ -6,7 +6,8 @@ import Sidebar from "../../DashBoard/Sidebar/Sidebar";
 
 
 const AddService = () => {
-  const { register, errors, handleSubmit } = useForm();
+  const { register, handleSubmit } = useForm();
+  const [message, setMessage] = useState('');
   const [image, setImage] = useState(null);
   const onSubmit = (data) => {
     // console.log(data);
@@ -17,7 +18,9 @@ const AddService = () => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newData),
     })
-    .then((res) => res.json());
+    .then((res) => res.json())
+    .then(result => setMessage('Service added Successfully'))
+    ;
   };
 
   const handleImageUpload = event =>{
@@ -39,46 +42,30 @@ const AddService = () => {
   return (
     <div className="d-flex">
       <div className="col-md-3">
-        
-    <Sidebar></Sidebar>     
-        
+    <Sidebar></Sidebar>
       </div>
-
       <div className="col-md-9">
       <h2 className='text-center'>Add a Service</h2>
         <form onSubmit={handleSubmit(onSubmit)}>
 
           <label>Service Name</label>
           <input {...register("serviceName", { required: true, maxLength: 80 })} />
-
-         
-          
-
           <label>Platform</label>
           <input {...register("platform", { required: true, maxLength: 80 })} />
-          
-          
-
           <label>Price</label>
           <input placeholder='Price' {...register("price", { required: true, maxLength: 80 })} />
-         
-          
-
           <label>Image</label>
           <input placeholder='Upload Image' name="imgUrl" type="file" onChange={(event)=> handleImageUpload(event)} />
-         
-          
-
-
           <Form.Group as={Row}>
           <Col sm={{ span: 10, offset: 2 }}>
             <Button variant="outline-primary" onClick={handleSubmit(onSubmit)}>
               
-               Add Product
+               Add Service
             </Button>
           </Col>
         </Form.Group>
         </form>
+        <h4 style={{color: 'green'}} className='mt-3'>{message}</h4>
       </div>
     </div>
   );

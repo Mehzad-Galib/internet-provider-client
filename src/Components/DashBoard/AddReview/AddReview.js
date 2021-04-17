@@ -8,6 +8,7 @@ const AddReview = () => {
 
   const { register, errors, handleSubmit } = useForm();
   const [image, setImage] = useState(null);
+  const [message, setMessage] = useState(``);
 
   const onSubmit = (data) =>{
     const userData = {...data, imgUrl: image}
@@ -17,7 +18,8 @@ const AddReview = () => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(userData),
     })
-    .then((res) => res.json());
+    .then((res) => res.json())
+    .then((result=> setMessage(`Review Added Successfully`)));
   }
 
   const handleImageUpload = event =>{
@@ -75,11 +77,12 @@ const AddReview = () => {
                   variant="outline-primary"
                   onClick={handleSubmit(onSubmit)}
                 >
-                  Add Product
+                  Add Review
                 </Button>
               </Col>
             </Form.Group>
           </form>
+          <h4 style={{color: 'green'}} className='mt-3'>{message}</h4>
         </div>
       </div>
     </>
