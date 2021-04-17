@@ -13,7 +13,7 @@ const AddReview = () => {
   const onSubmit = (data) =>{
     const userData = {...data, imgUrl: image}
     console.log(userData);
-    fetch("http://localhost:8080/addReview", {
+    fetch("https://fathomless-ridge-55165.herokuapp.com/addReview", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(userData),

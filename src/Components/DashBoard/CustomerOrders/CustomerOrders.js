@@ -8,7 +8,7 @@ const CustomerOrders = () => {
     const [info, setInfo] = useState([]);
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     useEffect(()=>{
-            fetch(`http://localhost:8080/purchase?email=${loggedInUser.email}`)
+            fetch(`https://fathomless-ridge-55165.herokuapp.com/purchase?email=${loggedInUser.email}`)
             .then(res => res.json())
             .then(data=> setInfo(data))
             .catch(err=> {

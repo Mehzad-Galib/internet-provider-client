@@ -21,7 +21,7 @@ const CheckOut = () => {
   const [product, setProduct] = useState({});
   const [message, setMessage] = useState(null);
   useEffect(() => {
-    fetch(`http://localhost:8080/checkout/${id}`)
+    fetch(`https://fathomless-ridge-55165.herokuapp.com/checkout/${id}`)
       .then((res) => res.json())
       .then((data) => {
           const newData = {...data, ...card};
@@ -36,7 +36,7 @@ const CheckOut = () => {
     const allInfo = { ...loggedInUser, orderDate: new Date().toDateString("dd/mm/yyyy"), ...product, orderStatus: 'pending' };
     console.log(allInfo);
 
-    fetch("http://localhost:8080/orderInfo", {
+    fetch("https://fathomless-ridge-55165.herokuapp.com/orderInfo", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

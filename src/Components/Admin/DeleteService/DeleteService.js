@@ -6,7 +6,7 @@ import AdminSidebar from '../AdminSidebar/AdminSidebar';
 const DeleteService = () => {
     const [service, setService] = useState([])
     const handleDelete = (id) =>{
-            fetch(`http://localhost:8080/delete/${id}`, {
+            fetch(`https://fathomless-ridge-55165.herokuapp.com/delete/${id}`, {
                 method: 'DELETE'
             })
             .then(result=> {
@@ -15,7 +15,7 @@ const DeleteService = () => {
     }
 
     useEffect(()=>{
-        fetch('http://localhost:8080/services')
+        fetch('https://fathomless-ridge-55165.herokuapp.com/services')
             .then(res => res.json())
             .then(data =>{
                 setService(data)

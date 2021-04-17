@@ -5,7 +5,7 @@ const ShowReview = () => {
     const [feelings, setFeelings] = useState([]);
 
     useEffect(()=>{
-            fetch('http://localhost:8080/review')
+            fetch('https://fathomless-ridge-55165.herokuapp.com/review')
             .then(res => res.json())
             .then(data =>{
                 setFeelings(data)

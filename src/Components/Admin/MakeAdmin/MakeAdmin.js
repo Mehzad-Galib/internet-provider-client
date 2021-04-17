@@ -8,7 +8,7 @@ const MakeAdmin = () => {
   const [confirm, setConfirm] = useState(null);
   const onSubmit = (data) => {
     
-    fetch("http://localhost:8080/makeAdmin", {
+    fetch("https://fathomless-ridge-55165.herokuapp.com/makeAdmin", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),

@@ -13,7 +13,7 @@ const AddService = () => {
     // console.log(data);
     const newData = {...data, imgUrl: image}
     console.log(newData);
-    fetch("http://localhost:8080/addService", {
+    fetch("https://fathomless-ridge-55165.herokuapp.com/addService", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newData),

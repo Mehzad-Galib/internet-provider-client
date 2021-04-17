@@ -12,7 +12,7 @@ const Sidebar = () => {
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
   useEffect(() => {
-    fetch(`http://localhost:8080/isAdmin?email=${loggedInUser.email}`)
+    fetch(`https://fathomless-ridge-55165.herokuapp.com/isAdmin?email=${loggedInUser.email}`)
       .then((res) => res.json())
       .then((data) => {
         if (data.length) {

@@ -15,14 +15,14 @@ const OrderList = () => {
     
     const allInfo = {orderStatus, id};
     console.log(allInfo);
-    fetch(`http://localhost:8080/updateOrderStatus`,{
+    fetch(`https://fathomless-ridge-55165.herokuapp.com/updateOrderStatus`,{
         method:'POST',
         headers: { "Content-Type": "application/json" },
       body: JSON.stringify(allInfo)
     })
   }
   useEffect(() => {
-    fetch("http://localhost:8080/orders")
+    fetch("https://fathomless-ridge-55165.herokuapp.com/orders")
       .then((res) => res.json())
       .then(
         (data) => {
