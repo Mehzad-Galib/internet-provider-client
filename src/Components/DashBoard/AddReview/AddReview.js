@@ -6,7 +6,7 @@ import axios from "axios";
 
 const AddReview = () => {
 
-  const { register, errors, handleSubmit } = useForm();
+  const { register, handleSubmit } = useForm();
   const [image, setImage] = useState(null);
   const [message, setMessage] = useState(``);
 
