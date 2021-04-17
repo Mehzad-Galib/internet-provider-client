@@ -1,10 +1,10 @@
 const firebaseConfig = {
-  apiKey: "AIzaSyB0lWJjbQL3UEMbJkG9XYrr-EuVnMkGJRY",
-  authDomain: "internet-provider-8722e.firebaseapp.com",
-  projectId: "internet-provider-8722e",
-  storageBucket: "internet-provider-8722e.appspot.com",
-  messagingSenderId: "385546962368",
-  appId: "1:385546962368:web:871a0e35a8e4da6f297425"
+  apiKey: "AIzaSyCpvYtPX_fDI4Yu32emS01XLLiYXINvEDo",
+  authDomain: "isprajnet4589.firebaseapp.com",
+  projectId: "isprajnet4589",
+  storageBucket: "isprajnet4589.appspot.com",
+  messagingSenderId: "892035383797",
+  appId: "1:892035383797:web:281767577b7c8a3e6ba0bc"
 };
   
     export default firebaseConfig;

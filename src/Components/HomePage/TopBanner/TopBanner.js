@@ -1,6 +1,5 @@
 import React from 'react';
 import Header from './Header/Header';
-import NavbarHeader from './NavbarHeader/NavbarHeader';
 import './TopBanner.css';
 
 const TopBanner = () => {

@@ -1,4 +1,3 @@
-import AdminSidebar from "../AdminSidebar/AdminSidebar";
 import React, { useState } from "react";
 import { Button, Col, Form, Row } from "react-bootstrap";
 import { useForm } from "react-hook-form";
