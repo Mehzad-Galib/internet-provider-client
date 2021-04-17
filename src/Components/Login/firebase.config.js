@@ -1,10 +1,10 @@
 const firebaseConfig = {
-    apiKey: "AIzaSyA4Xw-EMSTgezlkuslmfRJGrANlloiRdAw",
-    authDomain: "smart-shop-8be10.firebaseapp.com",
-    projectId: "smart-shop-8be10",
-    storageBucket: "smart-shop-8be10.appspot.com",
-    messagingSenderId: "1093457001683",
-    appId: "1:1093457001683:web:82681805f6e3e589c7e826"
-  };
+  apiKey: "AIzaSyB0lWJjbQL3UEMbJkG9XYrr-EuVnMkGJRY",
+  authDomain: "internet-provider-8722e.firebaseapp.com",
+  projectId: "internet-provider-8722e",
+  storageBucket: "internet-provider-8722e.appspot.com",
+  messagingSenderId: "385546962368",
+  appId: "1:385546962368:web:871a0e35a8e4da6f297425"
+};
   
     export default firebaseConfig;
