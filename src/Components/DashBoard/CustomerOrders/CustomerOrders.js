@@ -2,8 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
 import { UserContext } from '../../../App';
 import Sidebar from '../Sidebar/Sidebar';
-import SideNav, { Toggle, Nav, NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
-import '@trendmicro/react-sidenav/dist/react-sidenav.css';
+
 
 const CustomerOrders = () => {
     const [info, setInfo] = useState([]);
@@ -17,13 +16,13 @@ const CustomerOrders = () => {
             })
     },[loggedInUser.email])
     return (
-        <div className="d-flex mt-5">
+        <div className="d-flex">
         
             <div className="col-md-3">
                 <Sidebar></Sidebar>
             </div>
             <div className="col-md-9 container mt-5 mr-5 ml-5">
-            <h1 className='text-center'>Your Orders</h1>
+            <h2 className='text-center'>Your Orders</h2>
                 <Table>
                     <thead>
                     <tr>

@@ -37,7 +37,7 @@ const AddService = () => {
   }
 
   return (
-    <div className="d-flex mt-5">
+    <div className="d-flex">
       <div className="col-md-3">
         
     <Sidebar></Sidebar>     
@@ -45,28 +45,29 @@ const AddService = () => {
       </div>
 
       <div className="col-md-9">
+      <h2 className='text-center'>Add a Service</h2>
         <form onSubmit={handleSubmit(onSubmit)}>
 
           <label>Service Name</label>
           <input {...register("serviceName", { required: true, maxLength: 80 })} />
 
          
-          <br />
+          
 
           <label>Platform</label>
           <input {...register("platform", { required: true, maxLength: 80 })} />
           
-          <br />
+          
 
           <label>Price</label>
-          <input {...register("price", { required: true, maxLength: 80 })} />
+          <input placeholder='Price' {...register("price", { required: true, maxLength: 80 })} />
          
-          <br />
+          
 
           <label>Image</label>
-          <input name="imgUrl" type="file" onChange={(event)=> handleImageUpload(event)} />
+          <input placeholder='Upload Image' name="imgUrl" type="file" onChange={(event)=> handleImageUpload(event)} />
          
-          <br />
+          
 
 
           <Form.Group as={Row}>

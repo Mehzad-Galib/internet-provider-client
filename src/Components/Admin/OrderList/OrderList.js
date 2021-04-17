@@ -15,13 +15,14 @@ const OrderList = () => {
         });
 
     return (
-        <div className="d-flex mt-5">
+        <div className="d-flex">
             <div className="col-md-3">
         
         <Sidebar></Sidebar>     
           
         </div>
-        <div className="col-md-9 container">
+        <div className="col-md-9">
+            <h2 className='text-center'>Customer Orders</h2>
         <Table bordered hover>
                 <thead>
                     <tr>

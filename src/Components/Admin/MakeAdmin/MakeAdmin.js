@@ -22,13 +22,14 @@ const MakeAdmin = () => {
   };
 
   return (
-    <div className="d-flex mt-5">
+    <div className="d-flex">
       <div className="col-md-3">
         <Sidebar></Sidebar>
       </div>
       <div className="col-md-9">
         <form onSubmit={handleSubmit(onSubmit)}>
-          <label>Add an Email</label>
+        <h2 className='text-center'>Make Admin</h2>
+        <label>Email</label>
           <input
             type="text"
             {...register("email", {

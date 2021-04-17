@@ -38,9 +38,7 @@ const NavbarHeader = () => {
                 
               </li>
 
-              {/* <li className="nav-item nav-link active">
-                 <Nav.Link as={Link} to={`/admin/addService`}>Admin Panel</Nav.Link>
-              </li> */}
+             
 
               <li className="nav-item nav-link active">
                 

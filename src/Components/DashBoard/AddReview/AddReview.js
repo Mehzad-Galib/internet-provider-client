@@ -38,36 +38,36 @@ const AddReview = () => {
 
   return (
     <>
-      <div className="d-flex mt-5">
+      <div className="d-flex">
         <div className="col-md-3">
           <Sidebar></Sidebar>
         </div>
 
         <div className="col-md-9">
-
+            <h2 className='text-center'>Add a Review</h2>
           <form onSubmit={handleSubmit(onSubmit)}>
             <label>User Name</label>
             <input
               {...register("userName", { required: true, maxLength: 80 })}
             />
 
-            <br />
+            
 
             <label>Company/Organization</label>
             <input
               {...register("company", { required: true, maxLength: 80 })}
             />
 
-            <br />
+            
 
             <label>Review</label>
             <input {...register("review", { required: true, maxLength: 80 })} />
 
-            <br />
+            
             <label>Image</label>
           <input name="imgUrl" type="file" onChange={(event)=> handleImageUpload(event)} />
 
-            <br />
+          
 
             <Form.Group as={Row}>
               <Col sm={{ span: 10, offset: 2 }}>
