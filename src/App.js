@@ -5,7 +5,6 @@ import Login from './Components/Login/Login';
 import Home from './Components/HomePage/Home';
 import NavbarHeader from './Components/HomePage/TopBanner/NavbarHeader/NavbarHeader';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
-import DashBoard from './Components/DashBoard/DashBoard';
 import AddService from './Components/Admin/AddService/AddService';
 import OrderList from './Components/Admin/OrderList/OrderList';
 import MakeAdmin from './Components/Admin/MakeAdmin/MakeAdmin';
@@ -15,6 +14,7 @@ import CheckOut from './Components/DashBoard/CheckOut/CheckOut';
 import CustomerOrders from './Components/DashBoard/CustomerOrders/CustomerOrders';
 
 export const UserContext = createContext();
+
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({});

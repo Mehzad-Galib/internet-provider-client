@@ -31,6 +31,8 @@ const OrderList = () => {
                         
                         <td>Platform</td>
                         <td>Price</td>
+                        <td>Card ID</td>
+                        <td>Postal Code</td>
                         
                         <td>Date of Order</td>
                         
@@ -45,6 +47,8 @@ const OrderList = () => {
                                 <td>{order.name}</td>
                                 <td>{order.platform}</td>
                                 <td>{order.price}</td>
+                                <td>{order.cardId}</td>
+                                <td>{order.postalCode}</td>
                                 <td>{order.orderDate}</td>
                             </tr>
                             )
