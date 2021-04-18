@@ -8,14 +8,14 @@ import sponsor4 from "../../../Images/sponsor4.jpg";
 const Sponsors = () => {
   return (
     <section className="container mt-5">
-        <h2 className="text-center">Our Sponsors</h2>
-      <div className="row">
+        <h2 style={{color: 'cyan'}} className="text-center mb-2">Our Sponsors</h2>
+      <div className="row mt-3">
 
-        <div className="col-md-3">
+        <div className="col-md-3 col-sm-6">
           <Card>
             <Card.Img style={{height: '200px'}} variant="top" src={sponsor1} />
             <Card.Body>
-              <Card.Title>Lenovo Legion 5</Card.Title>
+              <Card.Title>Lenovo</Card.Title>
               <Card.Text></Card.Text>
             </Card.Body>
           </Card>
@@ -24,7 +24,7 @@ const Sponsors = () => {
           <Card>
             <Card.Img style={{height: '200px'}} variant="top" src={sponsor2} />
             <Card.Body>
-              <Card.Title>IPhone 12</Card.Title>
+              <Card.Title>Apple</Card.Title>
               <Card.Text></Card.Text>
             </Card.Body>
           </Card>
@@ -33,7 +33,7 @@ const Sponsors = () => {
           <Card>
             <Card.Img style={{height: '200px'}} variant="top" src={sponsor3} />
             <Card.Body>
-              <Card.Title>Drone </Card.Title>
+              <Card.Title>Adidas</Card.Title>
               <Card.Text></Card.Text>
             </Card.Body>
           </Card>
@@ -42,7 +42,7 @@ const Sponsors = () => {
           <Card>
             <Card.Img style={{height: '200px'}} variant="top" src={sponsor4} />
             <Card.Body>
-              <Card.Title>Programming Hero</Card.Title>
+              <Card.Title>Microsoft</Card.Title>
               <Card.Text></Card.Text>
             </Card.Body>
           </Card>

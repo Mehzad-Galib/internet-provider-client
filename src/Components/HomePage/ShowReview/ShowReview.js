@@ -9,13 +9,13 @@ const ShowReview = () => {
             .then(res => res.json())
             .then(data =>{
                 setFeelings(data)
-                // console.log(data);
+               
             })
     },[])
     return (
         <section className='container mt-5'>
-            <h2 className="text-center">Customer Review</h2>
-            <div className="row">
+            <h2 style={{color: 'magenta'}} className="text-center">Testimonials</h2>
+            <div className="row mt-3">
             {
                     feelings.map(feeling => <Review key={feeling._id} feeling={feeling} ></Review>)
                 }

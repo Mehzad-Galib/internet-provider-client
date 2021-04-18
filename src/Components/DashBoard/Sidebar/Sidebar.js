@@ -18,11 +18,7 @@ const Sidebar = () => {
         if (data.length) {
           setIsAdmin(true);
           setIsUser(false);
-          
         }
-        
-
-        // console.log(data);
       })
       .catch((err) => {});
   });

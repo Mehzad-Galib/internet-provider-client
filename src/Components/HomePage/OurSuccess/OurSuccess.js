@@ -7,9 +7,9 @@ import award3 from "../../../Images/award 3.jpg";
 const OurSuccess = () => {
   return (
     <div className="container mt-5"> 
-    <h2 className="text-center">Our Success</h2>
-        <div className="row">
-        <div className="col-md-4">
+    <h2 style={{color: 'purple'}} className="text-center">Our Achievements</h2>
+        <div className="row mt-3">
+        <div className="col-md-4 col-sm-12">
 
           <Card>
             <Card.Img style={{height: '250px'}} variant="top" src={award1} />

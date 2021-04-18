@@ -12,6 +12,7 @@ import DeleteService from './Components/Admin/DeleteService/DeleteService';
 import AddReview from './Components/DashBoard/AddReview/AddReview';
 import CheckOut from './Components/DashBoard/CheckOut/CheckOut';
 import CustomerOrders from './Components/DashBoard/CustomerOrders/CustomerOrders';
+import ShowServices from './Components/HomePage/ShowServices/ShowServices';
 
 export const UserContext = createContext();
 
@@ -27,6 +28,9 @@ function App() {
        
           <Route path="/home">
             <Home></Home>
+          </Route>
+          <Route path="/services">
+            <ShowServices></ShowServices>
           </Route>
           <Route exact path="/">
             <Home></Home>

@@ -10,6 +10,7 @@ import { faGoogle } from "@fortawesome/free-brands-svg-icons";
 import { useHistory, useLocation } from "react-router";
 import { useForm } from "react-hook-form";
 import './login.css';
+import { faUser } from "@fortawesome/free-regular-svg-icons";
 
 if (firebase.apps.length === 0) {
   firebase.initializeApp(firebaseConfig);
@@ -33,6 +34,9 @@ const Login = () => {
       .createUserWithEmailAndPassword(email, password)
       .then((result) => {
         setConfirm(`${firstName} Logged in Successfully`);
+        const signedInUser = { name: firstName, email: email };
+        setLoggedInUser(signedInUser)
+        history.replace(from);
       })
       .catch((error) => {
         setConfirm(error.message);
@@ -47,6 +51,9 @@ const Login = () => {
       .signInWithEmailAndPassword(email, password)
       .then((result) => {
         setConfirm(`${firstName} Logged in Successfully`);
+        const signedInUser = { name: firstName, email: email };
+        setLoggedInUser(signedInUser)
+        history.replace(from);
       })
       .catch((error) => {
         const errorMessage = error.message;
@@ -78,9 +85,9 @@ const Login = () => {
   return (
     <div className="container mt-5 loginPage">
       {loggedInUser.name ? (
-        <h4 className="welcome">Welcome, {loggedInUser.name}</h4>
+        <h4 className="text-center"><FontAwesomeIcon icon={faUser} /> {loggedInUser.name}</h4>
       ) : (
-        <h4 className="welcome text-center">Please Login to Continue</h4>
+        <h4 className="text-center">Please Login to Continue</h4>
       )}
 
       <form className='loginForm' onSubmit={handleSubmit(onSubmit || onLogin)}>
@@ -138,14 +145,7 @@ const Login = () => {
             </Button>
           </Col>
         </Form.Group>
-
-        
-
       </div>
-
-      
-      
-     
     </div>
   );
 };

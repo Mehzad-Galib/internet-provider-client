@@ -42,29 +42,11 @@
     font-weight: 500;
   }
   
-  .SignIn {
-    background: #ec5990;
-    color: white;
-    text-transform: uppercase;
-    border: none;
-    margin-top: 40px;
-    padding: 20px;
-    font-size: 16px;
-    font-weight: 100;
-    letter-spacing: 10px;
-  }
+
   
-  .SignIn:hover {
-    background: #bf1650;
-  }
+ 
   
-  .SignIn:active,
-  .SignIn:active {
-    transition: 0.3s all;
-    transform: translateY(3px);
-    border: 1px solid transparent;
-    opacity: 0.8;
-  }
+  
   
   input:disabled {
     opacity: 0.4;

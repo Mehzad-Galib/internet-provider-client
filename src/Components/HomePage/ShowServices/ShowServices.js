@@ -15,8 +15,8 @@ const ShowServices = () => {
 
     return (
         <div className="container mt-4">
-            <h2 className="text-center">Our Services</h2>
-            <div className="row">
+            <h2 style={{color: 'indigo'}} className="text-center">BroadBand Services</h2>
+            <div className="row mt-3">
                 {
                     services.map(service => <Service key={service._id} service={service}></Service> )
                 }
