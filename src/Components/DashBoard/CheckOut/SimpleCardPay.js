@@ -32,7 +32,7 @@ const SimpleCardPay = (props) => {
         cardInfo.last4 = paymentMethod.card.last4;
         cardInfo.postalCode = paymentMethod.billing_details.address.postal_code;
       setPaymentInfo(`Your card information is valid, You may proceed to order.`)
-    //   console.log('[PaymentMethod]', paymentMethod.id);
+    
       detail(cardInfo)
       setPaymentStatus(true);
     }

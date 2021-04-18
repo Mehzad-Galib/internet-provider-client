@@ -9,7 +9,7 @@ import { faSignInAlt, faWifi } from "@fortawesome/free-solid-svg-icons";
 const NavbarHeader = () => {
   const [isAdmin, setIsAdmin] = useState(false);
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
-  
+
   useEffect(() => {
     fetch(
       `https://fathomless-ridge-55165.herokuapp.com/isAdmin?email=${loggedInUser.email}`
@@ -18,9 +18,7 @@ const NavbarHeader = () => {
       .then((data) => {
         if (data.length) {
           setIsAdmin(true);
-          
         }
-        
       })
       .catch((err) => {});
   });
@@ -34,7 +32,7 @@ const NavbarHeader = () => {
       >
         <div className="container-fluid">
           <Navbar.Brand as={Link} to={`/`} className="navbar-brand">
-          <FontAwesomeIcon icon={faWifi} /> Raj Net BD
+            <FontAwesomeIcon icon={faWifi} /> Raj Net BD
           </Navbar.Brand>
           <button
             className="navbar-toggler"
@@ -42,7 +40,7 @@ const NavbarHeader = () => {
             data-bs-toggle="collapse"
             data-bs-target="#navbarTogglerDemo02"
             aria-controls="navbarTogglerDemo02"
-            aria-expanded="true"
+            aria-expanded="false"
             aria-label="Toggle navigation"
           >
             <span className="navbar-toggler-icon"></span>
@@ -55,59 +53,57 @@ const NavbarHeader = () => {
                 </Nav.Link>
               </li>
 
-             
-
-              {isAdmin ? 
-              (<div>
-                <li className="nav-item nav-link active">
-                  <Nav.Link as={Link} to={`/admin/orderList`}>
-                    DashBoard
-                  </Nav.Link>
-                </li>
-              </div>) : 
-              (<div>
-                <li className="nav-item nav-link active">
-                  <Nav.Link as={Link} to={`/dashboard/review`}>
-                    DashBoard
-                  </Nav.Link>
-                </li>
-              </div>)
-              }
-
+              {isAdmin ? (
+                <div>
+                  <li className="nav-item nav-link active">
+                    <Nav.Link as={Link} to={`/admin/orderList`}>
+                      DashBoard
+                    </Nav.Link>
+                  </li>
+                </div>
+              ) : (
+                <div>
+                  <li className="nav-item nav-link active">
+                    <Nav.Link as={Link} to={`/dashboard/review`}>
+                      DashBoard
+                    </Nav.Link>
+                  </li>
+                </div>
+              )}
 
               <li className="nav-item nav-link active">
-              <Nav.Link to='/services'>
-                    Services
-                  </Nav.Link>
+                <Nav.Link to="/services">Services</Nav.Link>
               </li>
 
-              {loggedInUser.email ? 
-              (<div>
-                <li className="nav-item nav-link active">
-                <Nav.Link>
-                <FontAwesomeIcon icon={faUserCircle} /> {loggedInUser.name}
-                </Nav.Link>
-                  
-                </li>
-                </div>)
-               : 
-               (<div>
-                <li className="nav-item nav-link active">
-                  <Button as={Link} to={`/login/`} variant="outline-info">
-                  <FontAwesomeIcon icon={faSignInAlt} /> Login
-                  </Button>
-                </li>
-                </div>)
-              }
+              {loggedInUser.email ? (
+                <div>
+                  <li className="nav-item nav-link active">
+                    <Nav.Link>
+                      <FontAwesomeIcon icon={faUserCircle} />{" "}
+                      {loggedInUser.name}
+                    </Nav.Link>
+                  </li>
+                </div>
+              ) : (
+                <div>
+                  <li className="nav-item nav-link active">
+                    <Button as={Link} to={`/login/`} variant="outline-info">
+                      <FontAwesomeIcon icon={faSignInAlt} /> Login
+                    </Button>
+                  </li>
+                </div>
+              )}
 
-              {loggedInUser.email && (<div>
-              <li className="nav-item nav-link active">
-                  <Button as={Link} to={`/login/`} variant="outline-info">
-                  <FontAwesomeIcon icon={faSignInAlt} /> Login from another Account
-                  </Button>
-                </li>
-              </div>)}
-
+              {loggedInUser.email && (
+                <div>
+                  <li className="nav-item nav-link active">
+                    <Button as={Link} to={`/login/`} variant="outline-info">
+                      <FontAwesomeIcon icon={faSignInAlt} /> Login from another
+                      Account
+                    </Button>
+                  </li>
+                </div>
+              )}
             </ul>
           </div>
         </div>

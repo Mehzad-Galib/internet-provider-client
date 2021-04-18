@@ -52,25 +52,14 @@ const AddReview = () => {
             <input
               {...register("userName", { required: true, maxLength: 80 })}
             />
-
-            
-
             <label>Company/Organization</label>
             <input
               {...register("company", { required: true, maxLength: 80 })}
             />
-
-            
-
             <label>Review</label>
             <input {...register("review", { required: true, maxLength: 80 })} />
-
-            
             <label>Image</label>
           <input name="imgUrl" type="file" onChange={(event)=> handleImageUpload(event)} />
-
-          
-
             <Form.Group as={Row}>
               <Col sm={{ span: 10, offset: 2 }}>
                 <Button

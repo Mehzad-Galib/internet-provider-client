@@ -1,34 +1,28 @@
 import React, { useEffect, useState } from "react";
-import { Button, Table } from "react-bootstrap";
+import { Table } from "react-bootstrap";
 import Sidebar from "../../DashBoard/Sidebar/Sidebar";
-import { useForm } from "react-hook-form";
 
 const OrderList = () => {
   const [orders, setOrders] = useState([]);
-  const { register, handleSubmit } = useForm();
-  const [orderStatus, setOrderStatus] = useState(null)
-  const [confirm, setConfirm] = useState('');
+  const [selectedOrder, setSelectedOrder] = useState({});
+  const [confirm, setConfirm] = useState(false);
 
-  const onSubmit = (data)=>{
-        console.log(data.orderStatus);
-        setOrderStatus(data.orderStatus)
-  }
-  const handleUpdate = id =>{
-    
-    const allInfo = {orderStatus, id};
-    console.log(allInfo);
+  const handleStatusChange = (status)=>{
+    const info = {id: selectedOrder._id, status};
+    console.log(info);
     fetch(`https://fathomless-ridge-55165.herokuapp.com/updateOrderStatus`,{
         method:'POST',
-        headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(allInfo)
+        headers: { "Content-type": "application/json" },
+      body: JSON.stringify(info)
     })
     .then(res => res.json())
     .then(success => {
-      setConfirm('Updated')
+      setConfirm(true)
       console.log(success);
     })
-    .catch(err => setConfirm(err.message))
+    .catch(err => {})
   }
+
   useEffect(() => {
     fetch("https://fathomless-ridge-55165.herokuapp.com/orders")
       .then((res) => res.json())
@@ -46,7 +40,7 @@ const OrderList = () => {
       <div className="col-md-3 col-sm-12">
         <Sidebar></Sidebar>
       </div>
-      <div className="col-md-9 col-sm-12">
+      <div className="col-md-9 col-sm-12 container">
         <h2 className="text-center">Customer Orders</h2>
         <Table bordered hover>
           <thead>
@@ -62,7 +56,7 @@ const OrderList = () => {
               <td>Date of Order</td>
               <td>Set Status</td>
               <td>Current Status</td>
-              <td>Order update</td>
+              
               
             </tr>
           </thead>
@@ -79,29 +73,34 @@ const OrderList = () => {
                   <td>{order.postalCode}</td>
                   <td>{order.orderDate}</td>
                   <td>
-                      <form onChange={handleSubmit(onSubmit)}>
-
-                      <select value={order.orderStatus} {...register("orderStatus")} >
-                          
-                      <option value="pending">Pending</option>
-                      <option value="ongoing">OnGoing</option>
-                      <option value="done">Done</option>
-                    </select>
-                    
-                      </form>
+                      <select
+                      onClick={() => setSelectedOrder(order)}
+                      onChange={e => handleStatusChange(e.target.value)}
+                      className={
+                        order.orderStatus === 'Pending' ?
+                        'text-danger' : order.orderStatus === 'Ongoing' ?
+                        'text-warning' : 'text-success'
+                      }
+                      >
+                        <option selected={order.orderStatus === 'Pending'} className="bg-white text-secondary">Pending</option>
+                        <option selected={order.orderStatus === 'Ongoing'} className="bg-white text-secondary">Ongoing</option>
+                        <option selected={order.orderStatus === 'Done'} className="bg-white text-secondary">Done</option>
+                        
+                      </select>
 
                   </td>
                   <td>{order.orderStatus}</td>
-                  <td>
-                      <Button onClick={()=>handleUpdate(order._id)}>Update</Button><br/>
-                      {confirm}
-                  </td>
+                  
                 </tr>
               );
             })}
           </tbody>
         </Table>
+        {
+          confirm ? <h4 style={{color: 'green'}}>Order state updated successfully</h4> : null
+        }
       </div>
+      
     </div>
   );
 };

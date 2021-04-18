@@ -10,7 +10,6 @@ const AddService = () => {
   const [message, setMessage] = useState('');
   const [image, setImage] = useState(null);
   const onSubmit = (data) => {
-    // console.log(data);
     const newData = {...data, imgUrl: image}
     console.log(newData);
     fetch("https://fathomless-ridge-55165.herokuapp.com/addService", {

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Table } from 'react-bootstrap';
 import Sidebar from '../../DashBoard/Sidebar/Sidebar';
-import AdminSidebar from '../AdminSidebar/AdminSidebar';
 
 const DeleteService = () => {
     const [service, setService] = useState([])
