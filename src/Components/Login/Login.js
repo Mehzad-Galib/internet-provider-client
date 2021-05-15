@@ -62,6 +62,17 @@ const Login = () => {
       });
   };
 
+  const handleSignOut = () => {
+    firebase.auth().signOut().then(() => {
+      // Sign-out successful.
+      setConfirm(``);
+      const signedInUser = { name: '', email: '' };
+        setLoggedInUser(signedInUser)
+    }).catch((error) => {
+      
+    });
+  }
+
   
 
   const handleGoogleLogin = () => {
@@ -142,6 +153,15 @@ const Login = () => {
             <Button variant="outline-primary" onClick={handleGoogleLogin}>
               {" "}
               <FontAwesomeIcon icon={faGoogle} /> Continue with Google
+            </Button>
+          </Col>
+        </Form.Group>
+
+        <Form.Group as={Row}>
+          <Col sm={{ span: 10, offset: 2 }}>
+            <Button variant="outline-primary" onClick={handleSignOut}>
+              {" "}
+               Sign Out
             </Button>
           </Col>
         </Form.Group>

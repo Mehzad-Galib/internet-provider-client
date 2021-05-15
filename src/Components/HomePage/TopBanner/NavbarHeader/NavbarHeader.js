@@ -5,6 +5,7 @@ import { UserContext } from "../../../../App";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserCircle } from "@fortawesome/free-regular-svg-icons";
 import { faSignInAlt, faWifi } from "@fortawesome/free-solid-svg-icons";
+import './navbar.css'
 
 const NavbarHeader = () => {
   const [isAdmin, setIsAdmin] = useState(false);
@@ -46,7 +47,7 @@ const NavbarHeader = () => {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
-            <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+            <ul className="navbar-nav ms-auto mb-2 mb-lg-0 nav-style">
               <li className="nav-item nav-link active">
                 <Nav.Link as={Link} to={`/home/`}>
                   Home
